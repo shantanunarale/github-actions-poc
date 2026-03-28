@@ -7,7 +7,7 @@ jobs:
       - name: test_code
         uses: actions/checkout@v3
       - name: run_lint
-        uses: echo "Linter Run"
+        run: echo "Linter Run"
   test_job:
     runs-on: ubuntu-latest
     needs: lint_job
@@ -21,6 +21,12 @@ jobs:
     needs: test_job
     steps:
       - name: Checkout code
+        run: : echo "Deploying code..."
+
+
+
+
+      
         uses: actions/checkout@v3
       - name: deployment
         run: echo "Running Deployments"
